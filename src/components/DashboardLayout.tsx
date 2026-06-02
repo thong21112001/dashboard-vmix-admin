@@ -1,10 +1,7 @@
 "use client";
 
 import { Layout, Menu } from "antd";
-import {
-  MenuFoldOutlined,
-  MenuUnfoldOutlined,
-} from "@ant-design/icons";
+import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
 
 import { useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
@@ -25,15 +22,15 @@ export default function DashboardLayout({
   return (
     <Layout style={{ minHeight: "100vh" }}>
       <Sider
-          collapsible
-          collapsed={collapsed}
-          trigger={null}
-          theme="light"
-          style={{
-            borderRight: "1px solid #e5e7eb",
-          }}
-        >
-        <div className="text-dark text-center py-4 text-xl font-bold">
+        collapsible
+        collapsed={collapsed}
+        trigger={null}
+        theme="light"
+        style={{
+          borderRight: "1px solid #e5e7eb",
+        }}
+      >
+        <div className="text-dark py-4 text-center text-xl font-bold">
           Vmix Admin
         </div>
 
@@ -47,30 +44,29 @@ export default function DashboardLayout({
       </Sider>
 
       <Layout>
-        <Header className="px-5 flex items-center" style={{
-    background:"#fff",
-    borderBottom:"1px solid #e5e7eb"
-  }}>
+        <Header
+          className="flex items-center px-5"
+          style={{
+            background: "#fff",
+            borderBottom: "1px solid #e5e7eb",
+          }}
+        >
           {collapsed ? (
             <MenuUnfoldOutlined
-              className="text-xl cursor-pointer"
+              className="cursor-pointer text-xl"
               onClick={() => setCollapsed(false)}
             />
           ) : (
             <MenuFoldOutlined
-              className="text-xl cursor-pointer"
+              className="cursor-pointer text-xl"
               onClick={() => setCollapsed(true)}
             />
           )}
 
-          <span className="ml-5 font-bold text-lg">
-            Dashboard
-          </span>
+          <span className="ml-5 text-lg font-bold">Dashboard</span>
         </Header>
 
-        <Content className="m-5 p-5 bg-white rounded">
-          {children}
-        </Content>
+        <Content className="m-5 rounded bg-white p-5">{children}</Content>
       </Layout>
     </Layout>
   );

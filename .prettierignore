@@ -1,0 +1,21 @@
+# Không format thư viện bên thứ 3
+# Vì đây là package được cài tự động, không phải code của mình
+node_modules
+
+# Thư mục NextJS tự sinh khi chạy/build project
+# Xóa được, sẽ tự tạo lại
+.next
+
+# File build output (nếu sau này export hoặc deploy)
+out
+dist
+
+# File lock quản lý version package
+# Không cần prettier xử lý
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# CÓ upload ảnh/file tĩnh
+# Tránh prettier quét file media
+public
