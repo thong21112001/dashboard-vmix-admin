@@ -24,13 +24,21 @@ export default function DashboardLayout({
 
   return (
     <Layout style={{ minHeight: "100vh" }}>
-      <Sider collapsible collapsed={collapsed} trigger={null}>
-        <div className="text-white text-center py-4 text-xl font-bold">
+      <Sider
+          collapsible
+          collapsed={collapsed}
+          trigger={null}
+          theme="light"
+          style={{
+            borderRight: "1px solid #e5e7eb",
+          }}
+        >
+        <div className="text-dark text-center py-4 text-xl font-bold">
           Vmix Admin
         </div>
 
         <Menu
-          theme="dark"
+          theme="light"
           mode="inline"
           selectedKeys={[pathname]}
           items={menuItems}
@@ -39,7 +47,10 @@ export default function DashboardLayout({
       </Sider>
 
       <Layout>
-        <Header className="bg-white px-5 flex items-center">
+        <Header className="px-5 flex items-center" style={{
+    background:"#fff",
+    borderBottom:"1px solid #e5e7eb"
+  }}>
           {collapsed ? (
             <MenuUnfoldOutlined
               className="text-xl cursor-pointer"
